@@ -12,6 +12,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
 public class Product implements BeanNameAware, BeanFactoryAware, ApplicationContextAware, InitializingBean, DisposableBean {
+
     private String name;
     private double price;
     private String beanName;
@@ -40,6 +41,7 @@ public class Product implements BeanNameAware, BeanFactoryAware, ApplicationCont
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         System.out.printf("2. выполняются действия setApplicationContext бина '%s'%n", beanName);
     }
+
     @PostConstruct
     public void annotInitMethod() {
         System.out.printf("4. @PostConstruct выполняются действия при инициализация бина '%s'%n", beanName);
